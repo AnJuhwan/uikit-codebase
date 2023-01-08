@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         
         yellowView.snp.makeConstraints{(make) -> Void in
 //            make.size.equalTo(100) // 정사각형인 경우 가능
-            make.width.equalTo(100)
-            make.height.equalTo(100)
+            make.width.equalTo(150)
+            make.height.equalTo(150)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(100)
         }
