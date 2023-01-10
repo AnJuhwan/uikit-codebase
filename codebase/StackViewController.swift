@@ -25,9 +25,44 @@ class StackViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let firstView = UIView()
-        firstView.translatesAutoresizingMaskIntoConstraints = false
-        firstView.backgroundColor = UIColor.systemYellow
+        self.view.backgroundColor = UIColor.white
+        
+        let firstView = MyCardView.generateMyCardView()
+        let secondView = MyCardView.generateMyCardView()
+        let thirdView = MyCardView.generateMyCardView()
+        
+        topStackView.addArrangedSubview(firstView)
+        topStackView.addArrangedSubview(secondView)
+        topStackView.addArrangedSubview(thirdView)
+        // 회면에 서브뷰로 스택뷰를 추가
+        self.view.addSubview(topStackView)
+        
+        //위치 잡기
+        NSLayoutConstraint.activate([
+            topStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            topStackView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 100),
+            topStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 20),
+        ])
+        
+        print(#function)
+    }
+}
+
+// view 관련
+extension StackViewController {
+    
+    fileprivate func generateMyCardView() -> MyCardView {
+        let cardView = MyCardView()
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        return cardView
+    }
+    
+    /// 카드뷰 생성 및 반환
+    /// - Returns: 카드뷰
+    fileprivate func generateCardView() -> UIView {
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = UIColor.systemYellow
         
         let titleLabel = UILabel()
         titleLabel.text = "사운드\n테라피"
@@ -44,7 +79,7 @@ class StackViewController: UIViewController {
         SubtitleLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         
         SubtitleLabelContainer.addSubview(subTitleLabel)
-    
+        
         NSLayoutConstraint.activate([
             subTitleLabel.centerXAnchor.constraint(equalTo: SubtitleLabelContainer.centerXAnchor),
             subTitleLabel.centerYAnchor.constraint(equalTo: SubtitleLabelContainer.centerYAnchor),
@@ -62,38 +97,25 @@ class StackViewController: UIViewController {
         ])
         
         // firstView 하위요소 추가
-        firstView.addSubview(titleLabel)
-        firstView.addSubview(SubtitleLabelContainer)
-        firstView.addSubview(bottomImageView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(SubtitleLabelContainer)
+        containerView.addSubview(bottomImageView)
         
         
         // firstView 대한 요소들 위치잡기
         NSLayoutConstraint.activate([
-            firstView.heightAnchor.constraint(equalToConstant: 200),
-            titleLabel.topAnchor.constraint(equalTo: firstView.topAnchor,constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: firstView.leadingAnchor,constant: 20),
+            containerView.heightAnchor.constraint(equalToConstant: 200),
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor,constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 20),
             
             SubtitleLabelContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 5),
             SubtitleLabelContainer.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             
-            bottomImageView.bottomAnchor.constraint(equalTo: firstView.bottomAnchor, constant: -10),
-            bottomImageView.trailingAnchor.constraint(equalTo: firstView.trailingAnchor, constant: -10)
+            bottomImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10),
+            bottomImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10)
         ])
         
-        
-        topStackView.addArrangedSubview(firstView)
-        
-        // 회면에 서브뷰로 스택뷰를 추가
-        self.view.addSubview(topStackView)
-        
-        //위치 잡기
-        NSLayoutConstraint.activate([
-            topStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            topStackView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 100),
-            topStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 20),
-        ])
-        
-        print(#function)
+        return containerView
     }
 }
 
