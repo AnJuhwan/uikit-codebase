@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StackViewController: UIViewController {
+class SnapkitViewController: UIViewController {
     
     lazy var topStackView : UIStackView = {
         
@@ -39,18 +39,22 @@ class StackViewController: UIViewController {
         self.view.addSubview(topStackView)
         
         //위치 잡기
-        NSLayoutConstraint.activate([
-            topStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            topStackView.topAnchor.constraint(equalTo: self.view.topAnchor,constant: 100),
-            topStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 20),
-        ])
         
+//        topStackView.snp.makeConstraints{
+//            $0.top.equalToSuperview().offset(100)
+//            $0.centerX.equalToSuperview()
+//            $0.left.equalToSuperview().offset(20)
+//        }
+        topStackView.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(100)
+            $0.horizontalEdges.equalToSuperview().inset(UIEdgeInsets(top: 0, left:20, bottom: 0, right: 20))
+        }
         print(#function)
     }
 }
 
 // view 관련
-extension StackViewController {
+extension SnapkitViewController {
     
     fileprivate func generateMyCardView() -> MyCardView {
         let cardView = MyCardView()
@@ -124,17 +128,17 @@ extension StackViewController {
 #if DEBUG
 import SwiftUI
 
-struct StackViewControllerPresentable : UIViewControllerRepresentable {
+struct SnapkitViewControllerPresentable : UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        StackViewController()
+        SnapkitViewController()
     }
     
-    struct ViewControllerPrepresentable_PreviewProvider : PreviewProvider {
+    struct SnapkitViewControllerPrepresentable_PreviewProvider : PreviewProvider {
         static var previews: some View {
-            StackViewControllerPresentable()
+            SnapkitViewControllerPresentable()
                 .previewDevice("iPhone 12 mini")
                 .ignoresSafeArea()
         }

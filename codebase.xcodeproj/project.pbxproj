@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB083E18296AFAF700CE8683 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB083E17296AFAF700CE8683 /* StackViewController.swift */; };
 		BB083E1A296D692E00CE8683 /* MyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB083E19296D692E00CE8683 /* MyCardView.swift */; };
+		BB083E1C296D6E1B00CE8683 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB083E17296AFAF700CE8683 /* StackViewController.swift */; };
+		BB08B5E8296D8F020026C803 /* SnapkitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB08B5E7296D8F020026C803 /* SnapkitController.swift */; };
 		BBD3A8C6296AA42D00FA8D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3A8C5296AA42D00FA8D05 /* AppDelegate.swift */; };
 		BBD3A8C8296AA42D00FA8D05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3A8C7296AA42D00FA8D05 /* SceneDelegate.swift */; };
 		BBD3A8CA296AA42D00FA8D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3A8C9296AA42D00FA8D05 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		BB083E17296AFAF700CE8683 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		BB083E19296D692E00CE8683 /* MyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardView.swift; sourceTree = "<group>"; };
+		BB08B5E7296D8F020026C803 /* SnapkitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapkitController.swift; sourceTree = "<group>"; };
 		BBD3A8C2296AA42D00FA8D05 /* codebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = codebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD3A8C5296AA42D00FA8D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD3A8C7296AA42D00FA8D05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				BBD3A8D0296AA42E00FA8D05 /* LaunchScreen.storyboard */,
 				BBD3A8D3296AA42E00FA8D05 /* Info.plist */,
 				BB083E17296AFAF700CE8683 /* StackViewController.swift */,
+				BB08B5E7296D8F020026C803 /* SnapkitController.swift */,
 			);
 			path = codebase;
 			sourceTree = "<group>";
@@ -156,9 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB08B5E8296D8F020026C803 /* SnapkitController.swift in Sources */,
 				BBD3A8CA296AA42D00FA8D05 /* ViewController.swift in Sources */,
-				BB083E18296AFAF700CE8683 /* StackViewController.swift in Sources */,
 				BBD3A8C6296AA42D00FA8D05 /* AppDelegate.swift in Sources */,
+				BB083E1C296D6E1B00CE8683 /* StackViewController.swift in Sources */,
 				BB083E1A296D692E00CE8683 /* MyCardView.swift in Sources */,
 				BBD3A8C8296AA42D00FA8D05 /* SceneDelegate.swift in Sources */,
 			);
